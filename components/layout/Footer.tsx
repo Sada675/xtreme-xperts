@@ -12,6 +12,7 @@ export default function Footer() {
 return ( <footer className="bg-slate-950 text-white"> <div className="container-custom py-14 md:py-16"> <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:gap-16">
 {/* Brand */} <div> <Link href="/" className="inline-flex items-center gap-3"> <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white"> <Wrench size={24} /> </div>
 
+```
           <div>
             <div className="text-xl font-black tracking-tight">
               XTREME<span className="text-blue-400">XPERTS</span>
@@ -91,7 +92,7 @@ return ( <footer className="bg-slate-950 text-white"> <div className="container-
 
     <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
       <p>
-        © {new Date().getFullYear()} Xtreme Xperts. All rights reserved.
+        © 2026 Xtreme Xperts. All rights reserved.
       </p>
 
       <p>Built with care for your technology.</p>
