@@ -42,7 +42,7 @@ const services = [
     description:
       "Get support for tablet screens, charging issues and other device problems.",
     category: "TABLETS",
-    image: "/images/services/tablet-repair.jpg",
+    image: "/images/services/tablet-repair11.jpg",
     alt: "Tablet device repair",
     icon: Tablet,
     accent: "group-hover:text-amber-500",
@@ -227,7 +227,7 @@ export default function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="relative mt-14 overflow-hidden rounded-[26px] bg-slate-950 p-7 sm:mt-16 sm:p-10 lg:p-12">
+        <div className="bg-gradient-to-br from-[#7C2AE8] via-[#9333EA] to-[#F59E0B] relative mt-14 overflow-hidden rounded-[26px]  p-7 sm:mt-16 sm:p-10 lg:p-12">
 
           {/* CTA Decoration */}
           <div
@@ -237,7 +237,7 @@ export default function Services() {
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-28 right-40 h-60 w-60 rounded-full bg-amber-400/10 blur-3xl"
+            className="pointer-events-none absolute -bottom-28 right-40 h-60 w-60 rounded-full bg-amber-400/90 blur-3xl"
           />
 
           <div className="relative flex flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left">
@@ -251,7 +251,7 @@ export default function Services() {
                 Not sure what your device needs?
               </h3>
 
-              <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-base">
+              <p className="mt-3 text-sm leading-7 text-slate-200 sm:text-base">
                 Tell us what is wrong, and our team can help you explore
                 the available repair options.
               </p>

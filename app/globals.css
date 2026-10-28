@@ -1,76 +1,67 @@
 @import "tailwindcss";
 
 :root {
---background: #ffffff;
---foreground: #101828;
---primary: #2563eb;
---primary-dark: #1d4ed8;
---muted: #667085;
---surface: #f8fafc;
+  --background: #ffffff;
+  --foreground: #101828;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --muted: #667085;
+  --surface: #f8fafc;
 }
 
 * {
   box-sizing: border-box;
-  }
+}
 
 html {
-scroll-behavior: smooth;
-scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-margin: 0;
-background: var(--background);
-color: var(--foreground);
-font-family: Arial, Helvetica, sans-serif;
--webkit-font-smoothing: antialiased;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 button,
 input,
 textarea,
 select {
-font: inherit;
+  font: inherit;
 }
 
 button,
 a {
--webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
-color: inherit;
-text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-cursor: pointer;
+  cursor: pointer;
 }
 
 ::selection {
-background: #bfdbfe;
-color: #1e3a8a;
+  background: #bfdbfe;
+  color: #1e3a8a;
 }
 
 .container-custom {
-width: min(100% - 40px, 1240px);
-margin-inline: auto;
+  width: min(100% - 40px, 1240px);
+  margin-inline: auto;
 }
 
 .section-padding {
-padding-block: 96px;
+  padding-block: 96px;
 }
 
-@media (max-width: 768px) {
-.section-padding {
-padding-block: 64px;
-}
-
-.container-custom {
-width: min(100% - 32px, 1240px);
-}
-}
-
+/* General Fade Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -80,5 +71,86 @@ width: min(100% - 32px, 1240px);
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes prefixReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+/* Hero Description and Badge Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Hero Buttons Animation */
+@keyframes buttonReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Typing Cursor Animation */
+@keyframes cursorBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Amber Text Glow */
+.text-glow-amber {
+  text-shadow: 0 0 24px rgba(251, 191, 36, 0.12);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .section-padding {
+    padding-block: 64px;
+  }
+
+  .container-custom {
+    width: min(100% - 32px, 1240px);
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
