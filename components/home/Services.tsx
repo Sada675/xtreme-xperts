@@ -86,7 +86,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#fafaf8] py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-[#fafaf8] py-10 sm:py-10 lg:py-12"
     >
       {/* Decorative Background */}
       <div

@@ -29,7 +29,7 @@ icon: Wrench,
 ];
 
 export default function TrustBar() {
-return ( <section className="border-b border-slate-100 bg-white"> <div className="container-custom grid grid-cols-2 gap-6 py-8 md:grid-cols-4 md:gap-5 md:py-10">
+return ( <section className="border-b border-slate-100 bg-[#fafaf8]"> <div className="container-custom grid grid-cols-2 gap-6 py-8 md:grid-cols-4 md:gap-5 md:py-10">
 {features.map((feature) => {
 const Icon = feature.icon;
 
