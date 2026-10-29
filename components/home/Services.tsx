@@ -227,7 +227,7 @@ export default function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-br from-[#7C2AE8] via-[#9333EA] to-[#F59E0B] relative mt-14 overflow-hidden rounded-[26px]  p-7 sm:mt-16 sm:p-10 lg:p-12">
+        <div className="bg-gradient-to-br from-[#342d19] via-[#9333EA] to-[#F59E0B] relative mt-14 overflow-hidden rounded-[26px]  p-7 sm:mt-16 sm:p-10 lg:p-12">
 
           {/* CTA Decoration */}
           <div
