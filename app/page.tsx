@@ -10,22 +10,22 @@ import ContactCTA from "@/components/home/ContactCTA";
 import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
-return (
-<> <Navbar />
+  return (
+    <>
+      <Navbar />
 
-  <main>
-    <Hero />
-    <TrustBar />
-    <WhyChooseUs />
-    <Services />
-    <Process />
-    <CustomerReviews />
-    <FAQ />
-    <ContactCTA />
-  </main>
+      <main>
+        <Hero />
+        <TrustBar />
+        <WhyChooseUs />
+        <Services />
+        <Process />
+        <CustomerReviews />
+        <FAQ />
+        <ContactCTA />
+      </main>
 
-  <Footer />
-</>
-
-);
+      <Footer />
+    </>
+  );
 }
