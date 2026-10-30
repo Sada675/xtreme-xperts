@@ -43,17 +43,17 @@ export default function FAQ() {
   return (
     <section className="relative overflow-hidden bg-[#fafaf8] px-5 py-10 sm:px-8 sm:py-14 lg:py-10">
       {/* Subtle background decoration */}
-      <div className="pointer-events-none absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-100/50 blur-3xl" />
+      <div className="pointer-events-none absolute top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-100/50 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-700 sm:text-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-bold tracking-[0.2em] text-amber-700 uppercase sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-amber-500" />
             Frequently Asked Questions
           </span>
 
-          <h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Questions?
             <span className="block text-amber-500">
               We&apos;ve Got Answers.
@@ -61,8 +61,8 @@ export default function FAQ() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-            Everything you need to know about our repair services, process,
-            and how to get your device back in working order.
+            Everything you need to know about our repair services, process, and
+            how to get your device back in working order.
           </p>
         </div>
 
@@ -81,9 +81,7 @@ export default function FAQ() {
               >
                 <button
                   type="button"
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                   className="group flex w-full items-center justify-between gap-5 py-5 text-left sm:py-6"
@@ -102,7 +100,7 @@ export default function FAQ() {
 
                     {/* Question */}
                     <span
-                      className={`text-sm font-bold leading-6 transition-colors duration-300 sm:text-base lg:text-lg ${
+                      className={`text-sm leading-6 font-bold transition-colors duration-300 sm:text-base lg:text-lg ${
                         isOpen
                           ? "text-slate-950"
                           : "text-slate-800 group-hover:text-amber-700"
@@ -132,7 +130,7 @@ export default function FAQ() {
                 <div
                   id={answerId}
                   hidden={!isOpen}
-                  className="pb-6 pl-9 pr-2 sm:pb-7 sm:pl-12 sm:pr-12"
+                  className="pr-2 pb-6 pl-9 sm:pr-12 sm:pb-7 sm:pl-12"
                 >
                   <p className="text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
                     {faq.answer}
@@ -144,7 +142,7 @@ export default function FAQ() {
         </div>
 
         {/* Bottom Contact CTA */}
-        <div className="mt-12 text-center sm:mt-16">
+        <div className="mt-6 text-center sm:mt-8">
           <p className="text-base font-medium text-slate-600">
             Still have questions?
           </p>

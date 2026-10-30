@@ -1,4 +1,3 @@
-
 import {
   MessageSquareText,
   SearchCheck,
@@ -41,26 +40,26 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="relative overflow-hidden bg-white py-10 sm:py-14 lg:py-14">
+    <section className="relative overflow-hidden bg-[#fafaf8] py-10 sm:py-14 lg:py-14">
       {/* Background decoration */}
-      <div className="pointer-events-none absolute -right-24 top-20 h-72 w-72 rounded-full bg-amber-100/50 blur-3xl" />
+      <div className="pointer-events-none absolute top-20 -right-24 h-72 w-72 rounded-full bg-amber-100/50 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         {/* Section Heading */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-amber-700 sm:text-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-bold tracking-[0.2em] text-amber-700 uppercase sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-amber-500" />
             How It Works
           </span>
 
-          <h2 className="mt-6 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Your Repair,
             <span className="text-amber-500"> Made Simple.</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-            Getting your device repaired doesn't have to be complicated.
-            Follow four simple steps to get started with Xtreme Xperts.
+            Getting your device repaired doesn't have to be complicated. Follow
+            four simple steps to get started with Xtreme Xperts.
           </p>
         </div>
 
@@ -73,7 +72,7 @@ export default function Process() {
               <div key={step.number} className="relative">
                 {/* Connector between cards on desktop */}
                 {index !== steps.length - 1 && (
-                  <div className="absolute left-[calc(100%+2px)] top-12 z-10 hidden w-4 border-t-2 border-dashed border-amber-300 lg:block" />
+                  <div className="absolute top-12 left-[calc(100%+2px)] z-10 hidden w-4 border-t-2 border-dashed border-amber-300 lg:block" />
                 )}
 
                 <article className="group relative h-full rounded-2xl border border-slate-200 bg-white p-7 transition-all duration-300 hover:-translate-y-2 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100/60 sm:p-8">
@@ -106,7 +105,7 @@ export default function Process() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl bg-slate-950 px-6 py-8 sm:flex-row sm:px-10 lg:px-12">
+        <div className="mt-12 flex flex-col items-center justify-between gap-5 rounded-2xl bg-gradient-to-br from-[#140B25] via-[#4C1D95] to-[#D97706] px-6 py-8 sm:flex-row sm:px-10 lg:px-12">
           <div>
             <h3 className="text-xl font-bold text-white sm:text-2xl">
               Ready to get your device fixed?

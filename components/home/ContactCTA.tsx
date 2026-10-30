@@ -18,9 +18,9 @@ const benefits = [
 
 export default function ContactCTA() {
   return (
-    <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+    <section className="bg-[#fafaf8] px-4 py-4 sm:px-6 sm:py-10 lg:px-8">
       {" "}
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl border border-amber-300/20 bg-[linear-gradient(115deg,#342d19_0%,#44351c_35%,#62491f_65%,#342d19_100%)] shadow-2xl shadow-black/10">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl border border-amber-300/20 bg-gradient-to-br from-[#140B25] via-[#4C1D95] to-[#D97706]">
         {/* Decorative Background Glow */}
         <div className="pointer-events-none absolute -top-28 -right-20 h-80 w-80 rounded-full bg-amber-400/15 blur-[100px]" />
 
@@ -54,7 +54,7 @@ export default function ContactCTA() {
             </h2>
 
             {/* Description */}
-            <p className="mt-6 max-w-xl text-base leading-7 text-amber-50/80 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-xl text-base leading-7 text-amber-50/90 sm:text-lg sm:leading-8">
               From smartphones to laptops, our expert team is ready to help. Get
               in touch today and let&apos;s find the right solution for your
               device.
@@ -107,7 +107,7 @@ export default function ContactCTA() {
               Call Our Team{" "}
             </a>
 
-            <p className="text-center text-xs leading-5 text-amber-100/65">
+            <p className="text-center text-xs leading-5 text-amber-100/95">
               Professional support for your devices
             </p>
           </div>

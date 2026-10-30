@@ -91,42 +91,40 @@ export default function Services() {
       {/* Decorative Background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-20 h-80 w-80 rounded-full bg-amber-100/40 blur-3xl"
+        className="pointer-events-none absolute top-20 -right-32 h-80 w-80 rounded-full bg-amber-100/40 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 bottom-20 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl"
+        className="pointer-events-none absolute bottom-20 -left-32 h-80 w-80 rounded-full bg-blue-100/30 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-
         {/* Section Heading */}
         <div className="mx-auto max-w-3xl text-center">
-
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 shadow-sm">
             <Wrench size={15} className="text-amber-500" />
 
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-slate-700 sm:text-xs">
+            <span className="text-[10px] font-extrabold tracking-[0.2em] text-slate-700 uppercase sm:text-xs">
               What We Repair
             </span>
           </div>
 
-          <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 text-3xl leading-tight font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
             Expert care for
             <span className="block text-amber-500 sm:inline">
-              {" "}every device.
+              {" "}
+              every device.
             </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Technology problems should not slow you down. Discover our
-            repair services and find the right support for your device.
+            Technology problems should not slow you down. Discover our repair
+            services and find the right support for your device.
           </p>
 
           {/* Small Trust Indicators */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-xs font-semibold text-slate-600 sm:text-sm">
-
             <span className="inline-flex items-center gap-2">
               <ShieldCheck size={17} className="text-amber-500" />
               Professional Care
@@ -143,7 +141,6 @@ export default function Services() {
 
         {/* Service Cards */}
         <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-
           {services.map((service) => {
             const Icon = service.icon;
 
@@ -154,7 +151,6 @@ export default function Services() {
               >
                 {/* Image Area */}
                 <div className="relative h-56 overflow-hidden bg-slate-100 sm:h-60">
-
                   <Image
                     src={service.image}
                     alt={service.alt}
@@ -167,7 +163,7 @@ export default function Services() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/5 to-slate-950/10 transition-opacity duration-300 group-hover:from-slate-950/80" />
 
                   {/* Category Badge */}
-                  <div className="absolute left-4 top-4">
+                  <div className="absolute top-4 left-4">
                     <span className="inline-flex items-center rounded-full border border-white/30 bg-white/95 px-3 py-1.5 text-[9px] font-extrabold tracking-[0.15em] text-slate-800 shadow-lg backdrop-blur-md sm:text-[10px]">
                       {service.category}
                     </span>
@@ -181,15 +177,16 @@ export default function Services() {
                   </div>
 
                   {/* Floating Icon */}
-                  <div className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/30 bg-white/95 text-slate-950 shadow-xl transition-all duration-300 group-hover:rotate-[-6deg] group-hover:bg-amber-400">
+                  <div className="absolute right-4 bottom-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/30 bg-white/95 text-slate-950 shadow-xl transition-all duration-300 group-hover:rotate-[-6deg] group-hover:bg-amber-400">
                     <Icon size={23} strokeWidth={1.8} />
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="p-5 sm:p-6">
-
-                  <h3 className={`text-lg font-extrabold tracking-tight text-slate-950 transition-colors duration-300 sm:text-xl ${service.accent}`}>
+                  <h3
+                    className={`text-lg font-extrabold tracking-tight text-slate-950 transition-colors duration-300 sm:text-xl ${service.accent}`}
+                  >
                     {service.title}
                   </h3>
 
@@ -215,7 +212,6 @@ export default function Services() {
                       />
                     </span>
                   </Link>
-
                 </div>
 
                 {/* Hover Accent */}
@@ -223,55 +219,49 @@ export default function Services() {
               </article>
             );
           })}
-
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-br from-[#342d19] via-[#9333EA] to-[#F59E0B] relative mt-14 overflow-hidden rounded-[26px]  p-7 sm:mt-16 sm:p-10 lg:p-12">
-
+        <div className="relative mt-14 overflow-hidden rounded-[26px] bg-gradient-to-br from-[#140B25] via-[#4C1D95] to-[#D97706] p-7 sm:mt-16 sm:p-10 lg:p-12">
           {/* CTA Decoration */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-12 -top-24 h-64 w-64 rounded-full border-[35px] border-white/[0.04]"
+            className="pointer-events-none absolute -top-24 -right-12 h-64 w-64 rounded-full border-[35px] border-white/[0.04]"
           />
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-28 right-40 h-60 w-60 rounded-full bg-amber-400/90 blur-3xl"
+            className="pointer-events-none absolute right-40 -bottom-28 h-60 w-60 rounded-full bg-amber-400/90 blur-3xl"
           />
 
           <div className="relative flex flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left">
-
             <div className="max-w-xl">
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-amber-400">
+              <span className="text-xs font-bold tracking-[0.18em] text-amber-400 uppercase">
                 Need a little help?
               </span>
 
-              <h3 className="mt-3 text-2xl font-extrabold leading-tight text-white sm:text-3xl">
+              <h3 className="mt-3 text-2xl leading-tight font-extrabold text-white sm:text-3xl">
                 Not sure what your device needs?
               </h3>
 
               <p className="mt-3 text-sm leading-7 text-slate-200 sm:text-base">
-                Tell us what is wrong, and our team can help you explore
-                the available repair options.
+                Tell us what is wrong, and our team can help you explore the
+                available repair options.
               </p>
             </div>
 
             <Link
               href="/contact"
-              className="group inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full bg-amber-400 px-7 py-4 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/10 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+              className="group inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full bg-amber-400 px-7 py-4 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/10 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
             >
               Talk to Our Team
-
               <ArrowRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
-
           </div>
         </div>
-
       </div>
     </section>
   );
