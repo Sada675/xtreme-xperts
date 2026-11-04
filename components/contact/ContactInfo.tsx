@@ -39,7 +39,7 @@ export default function ContactInfo() {
           </span>
 
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-[#251039] sm:text-4xl lg:text-5xl">
-            We&apos;re Here to Help
+            We&apos;re Here to <span className="text-glow-amber">Help</span>
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base">
