@@ -18,7 +18,7 @@ const benefits = [
 
 export default function ContactCTA() {
   return (
-    <section className="bg-[#fafaf8] px-4 py-4 sm:px-6 sm:py-10 lg:px-8">
+    <section className="bg-background px-4 py-4 sm:px-6 sm:py-10 lg:px-8">
       {" "}
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl border border-amber-300/20 bg-gradient-to-br from-[#140B25] via-[#4C1D95] to-[#D97706]">
         {/* Decorative Background Glow */}

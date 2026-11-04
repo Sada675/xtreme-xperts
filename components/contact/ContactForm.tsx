@@ -28,7 +28,7 @@ export default function ContactForm() {
 
           <h2 className="mt-5 text-3xl leading-tight font-extrabold tracking-tight text-[#251039] sm:text-4xl lg:text-5xl">
             Tell Us How
-            <span className="block bg-gradient-to-r from-[#52218b] to-[#d97721] bg-clip-text text-transparent">
+            <span className="text-glow-amber block bg-clip-text">
               We Can Help
             </span>
           </h2>

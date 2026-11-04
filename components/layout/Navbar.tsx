@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  ArrowUpRight,
-  Menu,
-  Phone,
-  X,
-  Wrench,
-} from "lucide-react";
+import { ArrowUpRight, Menu, Phone, X, Wrench } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -63,7 +57,7 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div
-            className={`relative flex min-h-[68px] items-center justify-between gap-2 border border-slate-200/80 bg-white px-3 shadow-lg shadow-slate-950/[0.08] backdrop-blur-xl transition-all duration-300 sm:min-h-[74px] sm:px-5 lg:min-h-[82px] lg:gap-6 lg:rounded-full lg:px-6 ${
+            className={`relative flex min-h-[68px] items-center justify-between gap-2 border-2 border-yellow-400 bg-white px-3 shadow-lg shadow-slate-950/[0.08] backdrop-blur-xl transition-all duration-300 sm:min-h-[74px] sm:px-5 lg:min-h-[82px] lg:gap-6 lg:rounded-full lg:px-6 ${
               menuOpen ? "rounded-2xl" : "rounded-full"
             }`}
           >
@@ -92,10 +86,8 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  aria-current={
-                    isActive(item.href) ? "page" : undefined
-                  }
-                  className={`group relative whitespace-nowrap py-3 text-sm font-semibold transition-colors duration-200 xl:text-[15px] ${
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`group relative py-3 text-sm font-semibold whitespace-nowrap transition-colors duration-200 xl:text-[15px] ${
                     isActive(item.href)
                       ? "text-slate-950"
                       : "text-slate-600 hover:text-slate-950"
@@ -105,9 +97,7 @@ export default function Navbar() {
 
                   <span
                     className={`absolute bottom-1 left-0 h-[3px] rounded-full bg-yellow-400 transition-all duration-300 ${
-                      isActive(item.href)
-                        ? "w-full"
-                        : "w-0 group-hover:w-full"
+                      isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
                 </Link>
@@ -115,9 +105,10 @@ export default function Navbar() {
             </nav>
 
             {/* Desktop CTA */}
+            {/* Desktop CTA */}
             <Link
               href="/contact"
-              className="group hidden min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-yellow-400 px-4 text-sm font-extrabold text-slate-950 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-yellow-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 xl:px-5 lg:inline-flex"
+              className="btn-dark group hidden lg:inline-flex xl:px-5"
             >
               <Phone size={16} />
 
@@ -136,7 +127,7 @@ export default function Navbar() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-yellow-400 text-slate-950 transition-colors hover:bg-yellow-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 lg:hidden"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-yellow-400 text-slate-950 transition-colors hover:bg-yellow-300 focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 focus-visible:outline-none lg:hidden"
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -151,7 +142,7 @@ export default function Navbar() {
         className={`fixed inset-0 z-[60] bg-slate-950/50 backdrop-blur-[3px] transition-opacity duration-300 lg:hidden ${
           menuOpen
             ? "visible opacity-100"
-            : "invisible pointer-events-none opacity-0"
+            : "pointer-events-none invisible opacity-0"
         }`}
       />
 
@@ -161,19 +152,19 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         aria-hidden={!menuOpen}
         inert={!menuOpen}
-        className={`fixed bottom-0 right-0 top-0 z-[70] flex w-[min(88%,360px)] flex-col overflow-y-auto border-l border-slate-200 bg-white px-5 pb-8 pt-6 shadow-2xl transition-transform duration-300 ease-out sm:px-6 lg:hidden ${
+        className={`fixed top-0 right-0 bottom-0 z-[70] flex w-[min(88%,360px)] flex-col overflow-y-auto border-l border-slate-200 bg-white px-5 pt-6 pb-8 shadow-2xl transition-transform duration-300 ease-out sm:px-6 lg:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* Drawer Brand Header */}
-        <div className="mb-6  rounded-2xl border border-yellow-200 bg-gradient-to-br from-yellow-50 to-white p-4">
+        <div className="mb-6 rounded-2xl border border-yellow-200 bg-gradient-to-br from-yellow-50 to-white p-4">
           <div className="mb-3 flex items-center gap-2">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-yellow-400 text-slate-950">
               <Wrench size={21} />
             </span>
 
             <div>
-              <p className="text-base font-extrabold leading-tight text-slate-950">
+              <p className="text-base leading-tight font-extrabold text-slate-950">
                 Xtreme Xperts
               </p>
 
@@ -189,7 +180,7 @@ export default function Navbar() {
         </div>
 
         {/* Drawer Navigation */}
-        <p className="mb-3 px-3 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
+        <p className="mb-3 px-3 text-[11px] font-bold tracking-[0.18em] text-slate-400 uppercase">
           Navigation
         </p>
 
@@ -198,9 +189,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              aria-current={
-                isActive(item.href) ? "page" : undefined
-              }
+              aria-current={isActive(item.href) ? "page" : undefined}
               onClick={() => setMenuOpen(false)}
               className={`flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-sm font-bold transition-colors ${
                 isActive(item.href)
@@ -213,9 +202,7 @@ export default function Navbar() {
               <ArrowUpRight
                 size={16}
                 className={
-                  isActive(item.href)
-                    ? "text-yellow-700"
-                    : "text-slate-400"
+                  isActive(item.href) ? "text-yellow-700" : "text-slate-400"
                 }
               />
             </Link>
@@ -231,12 +218,10 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-sm transition-colors hover:bg-yellow-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2"
+            className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-sm transition-colors hover:bg-yellow-300 focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             <Phone size={17} />
-
             Get a Quote
-
             <ArrowUpRight
               size={17}
               className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

@@ -55,7 +55,7 @@ export default function FAQ() {
 
           <h2 className="mt-6 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Questions?
-            <span className="block text-amber-500">
+            <span className="text-glow-amber block">
               We&apos;ve Got Answers.
             </span>
           </h2>

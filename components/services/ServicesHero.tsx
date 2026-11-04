@@ -41,7 +41,7 @@ export default function ServicesHero() {
               {/* Heading */}
               <h1 className="text-[19px] leading-[1.2] font-extrabold tracking-tight text-white sm:text-3xl lg:text-[2.8rem] xl:text-5xl">
                 Need a Repair?
-                <span className="mt-1 block bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 bg-clip-text text-transparent sm:mt-2">
+                <span className="text-glow-amber mt-1 block bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 bg-clip-text sm:mt-2">
                   Let&apos;s Get It Fixed!
                 </span>
               </h1>

@@ -219,7 +219,7 @@ export default function ServicesGrid() {
 
           <h2 className="text-[27px] leading-tight font-black tracking-tight text-[#171923] sm:text-4xl lg:text-5xl">
             We Fix Your Tech.
-            <span className="block bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text text-transparent">
+            <span className="text-glow-amber block bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text">
               You Get Back to Life.
             </span>
           </h2>
@@ -384,7 +384,7 @@ export default function ServicesGrid() {
                           href="/contact"
                           tabIndex={isActive ? 0 : -1}
                           onClick={(event) => event.stopPropagation()}
-                          className="group inline-flex shrink-0 items-center gap-1 rounded-full bg-amber-400 px-3 py-2 text-[8px] font-extrabold text-[#171923] shadow-md shadow-amber-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-500 hover:shadow-lg hover:shadow-amber-500/30 sm:gap-1.5 sm:px-4 sm:py-2.5 sm:text-xs"
+                          className="group btn-dark inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-2 text-[8px] font-extrabold text-[#171923] shadow-md shadow-amber-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-500 hover:shadow-lg hover:shadow-amber-500/30 sm:gap-1.5 sm:px-4 sm:py-2.5 sm:text-xs"
                         >
                           Book a Repair
                           <ArrowUpRight

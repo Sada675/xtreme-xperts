@@ -112,7 +112,7 @@ export default function Services() {
 
           <h2 className="mt-5 text-3xl leading-tight font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
             Expert care for
-            <span className="block text-amber-500 sm:inline">
+            <span className="text-glow-amber block sm:inline">
               {" "}
               every device.
             </span>
@@ -252,7 +252,7 @@ export default function Services() {
 
             <Link
               href="/contact"
-              className="group inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full bg-amber-400 px-7 py-4 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/10 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
+              className="group btn-dark inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full px-7 py-4 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/10 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
             >
               Talk to Our Team
               <ArrowRight

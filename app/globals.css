@@ -1,13 +1,39 @@
 @import "tailwindcss";
 
+/* =================================
+   XTREME XPERTS - GLOBAL VARIABLES
+================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #101828;
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --muted: #667085;
-  --surface: #f8fafc;
+  /* Brand Colors */
+  --primary: #251039;
+  --primary-dark: #1c0b2b;
+
+  --amber: #faa003;
+  --amber-hover: #fde047;
+  --amber-light: #fef9c3;
+
+  /* Background Colors */
+  --background: #fafaf8;
+  --foreground: #251039;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+
+  /* Text Colors */
+  --muted: #64748b;
+  --button-text: #0f172a;
+
+  /* Border */
+  --border: #e2e8f0;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgb(0 0 0 / 8%);
+  --shadow-amber: 0 6px 15px rgb(250 204 21 / 20%);
 }
+
+/* =================================
+   GLOBAL RESET
+================================= */
 
 * {
   box-sizing: border-box;
@@ -20,7 +46,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -48,9 +74,13 @@ button {
 }
 
 ::selection {
-  background: #bfdbfe;
-  color: #1e3a8a;
+  background: #fef08a;
+  color: #251039;
 }
+
+/* =================================
+   GLOBAL CONTAINER
+================================= */
 
 .container-custom {
   width: min(100% - 40px, 1240px);
@@ -61,7 +91,149 @@ button {
   padding-block: 96px;
 }
 
+/* =================================
+   GLOBAL COLOR UTILITY CLASSES
+================================= */
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--muted);
+}
+
+.text-amber {
+  color: var(--amber);
+}
+
+.text-glow-amber {
+  color: var(--amber);
+  text-shadow: 0 0 24px rgba(232, 232, 12, 0.25);
+}
+
+/* Background Colors */
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-amber {
+  background-color: var(--amber);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+/* Border */
+
+.border-default {
+  border-color: var(--border);
+}
+
+/* =================================
+   GLOBAL BUTTON COMPONENTS
+================================= */
+
+@layer components {
+  /* Primary Amber Button */
+
+  .btn-dark {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 48px;
+    padding: 0 24px;
+
+    border: none;
+    border-radius: 9999px;
+
+    background-color: #facc15 !important;
+    color: #0f172a !important;
+
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+
+    box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    cursor: pointer;
+  }
+
+  .btn-dark:hover {
+    background-color: #fde047 !important;
+    color: #0f172a !important;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgb(250 204 21 / 20%);
+  }
+
+  .btn-dark:focus-visible {
+    outline: 2px solid #eab308;
+    outline-offset: 3px;
+  }
+
+  .btn-dark:active {
+    transform: translateY(0);
+  }
+
+  .btn-dark:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Secondary Outline Button */
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 48px;
+    padding: 0 24px;
+
+    border: 1.5px solid var(--primary);
+    border-radius: 9999px;
+
+    background-color: transparent;
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+}
+
+/* =================================
+   GLOBAL ANIMATIONS
+================================= */
+
 /* General Fade Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -73,6 +245,8 @@ button {
     transform: translateY(0);
   }
 }
+
+/* Prefix Reveal */
 
 @keyframes prefixReveal {
   0% {
@@ -89,6 +263,7 @@ button {
 }
 
 /* Hero Description and Badge Animation */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -102,6 +277,7 @@ button {
 }
 
 /* Hero Buttons Animation */
+
 @keyframes buttonReveal {
   from {
     opacity: 0;
@@ -115,6 +291,7 @@ button {
 }
 
 /* Typing Cursor Animation */
+
 @keyframes cursorBlink {
   0%,
   49% {
@@ -127,12 +304,10 @@ button {
   }
 }
 
-/* Amber Text Glow */
-.text-glow-amber {
-  text-shadow: 0 0 24px rgba(251, 191, 36, 0.12);
-}
+/* =================================
+   RESPONSIVE STYLING
+================================= */
 
-/* Responsive Styling */
 @media (max-width: 768px) {
   .section-padding {
     padding-block: 64px;
@@ -141,9 +316,24 @@ button {
   .container-custom {
     width: min(100% - 32px, 1240px);
   }
+
+  .btn-dark,
+  .btn-outline {
+    min-height: 46px;
+    padding-inline: 20px;
+  }
 }
 
-/* Accessibility: Reduced Motion */
+@media (max-width: 480px) {
+  .section-padding {
+    padding-block: 52px;
+  }
+}
+
+/* =================================
+   ACCESSIBILITY - REDUCED MOTION
+================================= */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

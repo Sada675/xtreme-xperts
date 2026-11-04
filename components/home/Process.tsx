@@ -54,7 +54,7 @@ export default function Process() {
 
           <h2 className="mt-6 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Your Repair,
-            <span className="text-amber-500"> Made Simple.</span>
+            <span className="text-glow-amber"> Made Simple.</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">

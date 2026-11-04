@@ -44,9 +44,7 @@ export default function Hero() {
 
   // Respect the user's motion preferences.
   useEffect(() => {
-    const mediaQuery = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const updateMotion = () => {
       setReducedMotion(mediaQuery.matches);
@@ -96,9 +94,7 @@ export default function Hero() {
 
         if (characterIndex <= 0) {
           timeout = setTimeout(() => {
-            setCurrentIndex(
-              (previous) => (previous + 1) % slides.length
-            );
+            setCurrentIndex((previous) => (previous + 1) % slides.length);
           }, 350);
 
           return;
@@ -174,12 +170,11 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/25" />
 
       {/* Subtle Amber Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400/[0.07] blur-[100px] sm:h-[500px] sm:w-[500px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400/[0.07] blur-[100px] sm:h-[500px] sm:w-[500px]" />
 
       {/* Hero Content */}
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-5 py-28 text-center sm:px-8 sm:py-32 lg:px-12">
         <div className="w-full max-w-3xl">
-
           {/* Animated Badge */}
           <div
             key={`badge-${currentIndex}`}
@@ -197,14 +192,14 @@ export default function Hero() {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-400" />
             </span>
 
-            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white sm:text-xs">
+            <span className="text-[10px] font-bold tracking-[0.18em] text-white uppercase sm:text-xs">
               {activeSlide.badge}
             </span>
           </div>
 
           {/* Main Heading */}
           <h1
-            className="text-3xl font-extrabold leading-[1.2] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.75rem]"
+            className="text-3xl leading-[1.2] font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.75rem]"
             aria-label={`${activeSlide.prefix} ${activeSlide.typing}`}
           >
             {/* Prefix Text */}
@@ -220,7 +215,7 @@ export default function Hero() {
             </span>
 
             {/* Typing Text */}
-            <span className="mt-2 flex min-h-[1.3em] items-center justify-center text-amber-400">
+            <span className="text-glow-amber mt-2 flex min-h-[1.3em] items-center justify-center">
               <span
                 key={`typing-${currentIndex}`}
                 aria-hidden="true"
@@ -228,8 +223,6 @@ export default function Hero() {
               >
                 {typedText}
               </span>
-
-              
             </span>
           </h1>
 
@@ -237,9 +230,7 @@ export default function Hero() {
           <p
             key={`description-${currentIndex}`}
             className={`mx-auto mt-6 max-w-xl text-sm leading-7 text-slate-200 sm:text-base sm:leading-8 ${
-              reducedMotion
-                ? ""
-                : "animate-[fadeUp_0.9s_ease-out_0.25s_both]"
+              reducedMotion ? "" : "animate-[fadeUp_0.9s_ease-out_0.25s_both]"
             }`}
           >
             {activeSlide.description}
@@ -255,22 +246,20 @@ export default function Hero() {
           >
             <Link
               href="/services"
-              className="group inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full bg-amber-400 px-7 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-amber-400/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl hover:shadow-amber-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+              className="group btn-dark inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full px-7 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-amber-400/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl hover:shadow-amber-400/20 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
             >
               Explore Our Services
-
               <ArrowUpRight
                 size={17}
-                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
 
             <Link
               href="/contact"
-              className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/35 bg-white/95 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-black/5 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/60 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+              className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/35 bg-white/95 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-black/5 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/60 hover:bg-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
             >
               Contact Our Team
-
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
@@ -281,34 +270,25 @@ export default function Hero() {
           {/* Trust Indicators */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-4 border-t border-white/15 pt-7 sm:gap-x-8">
             <div className="flex items-center gap-2.5">
-              <ShieldCheck
-                size={20}
-                className="shrink-0 text-amber-400"
-              />
+              <ShieldCheck size={20} className="shrink-0 text-amber-400" />
 
-              <span className="text-xs font-medium leading-5 text-slate-200 sm:text-sm">
+              <span className="text-xs leading-5 font-medium text-slate-200 sm:text-sm">
                 Expert Technicians
               </span>
             </div>
 
             <div className="flex items-center gap-2.5">
-              <Clock3
-                size={20}
-                className="shrink-0 text-amber-400"
-              />
+              <Clock3 size={20} className="shrink-0 text-amber-400" />
 
-              <span className="text-xs font-medium leading-5 text-slate-200 sm:text-sm">
+              <span className="text-xs leading-5 font-medium text-slate-200 sm:text-sm">
                 Reliable Service
               </span>
             </div>
 
             <div className="flex items-center gap-2.5">
-              <Star
-                size={20}
-                className="shrink-0 text-amber-400"
-              />
+              <Star size={20} className="shrink-0 text-amber-400" />
 
-              <span className="text-xs font-medium leading-5 text-slate-200 sm:text-sm">
+              <span className="text-xs leading-5 font-medium text-slate-200 sm:text-sm">
                 Quality Repairs
               </span>
             </div>
@@ -330,7 +310,7 @@ export default function Hero() {
                 }}
                 aria-label={`Show slide ${index + 1}`}
                 aria-pressed={currentIndex === index}
-                className={`h-1.5 rounded-full transition-all duration-500 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                className={`h-1.5 rounded-full transition-all duration-500 ease-out focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none ${
                   currentIndex === index
                     ? "w-9 bg-amber-400"
                     : "w-4 bg-white/40 hover:bg-white/80"
@@ -340,8 +320,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-     
     </section>
   );
 }

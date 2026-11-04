@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
       {/* Background decorations */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-purple-100/60 blur-3xl"
+        className="pointer-events-none absolute top-20 -left-32 h-72 w-72 rounded-full bg-purple-100/60 blur-3xl"
       />
 
       <div
@@ -60,31 +60,31 @@ export default function WhyChooseUs() {
             {/* Decorative purple shape */}
             <div
               aria-hidden="true"
-              className="absolute -right-2 -top-2 h-20 w-20 rounded-2xl bg-purple-200/70 sm:-right-5 sm:-top-5 sm:h-36 sm:w-36"
+              className="absolute -top-2 -right-2 h-20 w-20 rounded-2xl bg-purple-200/70 sm:-top-5 sm:-right-5 sm:h-36 sm:w-36"
             />
 
             {/* Main image */}
             <div className="group relative h-[300px] w-full overflow-hidden rounded-[24px] border border-slate-200 bg-slate-100 shadow-lg sm:h-[420px] sm:rounded-[28px] lg:h-[460px]">
-  <Image
-    src="/images/why-choose-us11.jpg"
-    alt="Technician repairing a smartphone"
-    fill
-    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 50vw"
-    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-    priority={false}
-  />
+              <Image
+                src="/images/why-choose-us11.jpg"
+                alt="Technician repairing a smartphone"
+                fill
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 50vw"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                priority={false}
+              />
 
               {/* Soft image overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/10 to-transparent pointer-events-none" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/10 to-transparent" />
 
               {/* Image caption */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
+              <div className="absolute right-0 bottom-0 left-0 p-5 sm:p-8">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md">
                   <span className="h-2 w-2 rounded-full bg-amber-400" />
                   Device Care & Repair
                 </span>
 
-                <h3 className="mt-4 max-w-sm text-xl font-bold leading-snug text-white sm:text-3xl">
+                <h3 className="mt-4 max-w-sm text-xl leading-snug font-bold text-white sm:text-3xl">
                   Better Support for Your Everyday Technology.
                 </h3>
               </div>
@@ -93,7 +93,7 @@ export default function WhyChooseUs() {
             {/* Yellow decorative element */}
             <div
               aria-hidden="true"
-              className="absolute -bottom-3 right-6 h-5 w-14 rounded-full bg-amber-400 sm:right-12 sm:h-6 sm:w-16"
+              className="absolute right-6 -bottom-3 h-5 w-14 rounded-full bg-amber-400 sm:right-12 sm:h-6 sm:w-16"
             />
           </div>
 
@@ -101,17 +101,17 @@ export default function WhyChooseUs() {
           <div className="order-2 lg:order-1">
             {/* Section badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 shadow-sm">
-            <Wrench size={15} className="text-amber-500" />
+              <Wrench size={15} className="text-amber-500" />
 
-            <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-slate-700 sm:text-xs">
-              Why Choose Us
-            </span>
-          </div>
+              <span className="text-[10px] font-extrabold tracking-[0.2em] text-slate-700 uppercase sm:text-xs">
+                Why Choose Us
+              </span>
+            </div>
 
             {/* Heading */}
-            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:mt-6 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 text-3xl leading-tight font-extrabold tracking-tight text-slate-950 sm:mt-6 sm:text-4xl lg:text-5xl">
               Your Devices Deserve{" "}
-              <span className="text-amber-500">Expert Care.</span>
+              <span className="text-glow-amber">Expert Care.</span>
             </h2>
 
             {/* Description */}
@@ -127,21 +127,24 @@ export default function WhyChooseUs() {
                 const Icon = benefit.icon;
 
                 return (
-                  <div key={benefit.title} className="group flex gap-3 sm:gap-4">
+                  <div
+                    key={benefit.title}
+                    className="group flex gap-3 sm:gap-4"
+                  >
                     {/* Benefit icon */}
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-amber-200 bg-amber-50 text-amber-600 transition-all duration-300 group-hover:border-purple-200 group-hover:bg-purple-50 group-hover:text-purple-600 sm:h-12 sm:w-12">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-amber-200 bg-amber-50 text-amber-900 transition-all duration-300 group-hover:border-amber-500 group-hover:bg-purple-50 group-hover:text-yellow-900 sm:h-12 sm:w-12">
                       <Icon size={22} strokeWidth={1.8} />
                     </div>
 
                     {/* Benefit text */}
                     <div className="min-w-0 flex-1 border-b border-slate-100 pb-4 sm:pb-5">
                       <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="text-base font-bold text-slate-900 transition-colors duration-300 group-hover:text-purple-700 sm:text-lg">
+                        <h3 className="text-base font-bold text-slate-900 transition-colors duration-300 group-hover:text-amber-400 sm:text-lg">
                           {benefit.title}
                         </h3>
 
                         {index === 0 && (
-                          <span className="rounded-full bg-amber-100 px-2 py-1 text-[9px] font-bold uppercase tracking-wider text-amber-700">
+                          <span className="rounded-full bg-amber-100 px-2 py-1 text-[9px] font-bold tracking-wider text-amber-700 uppercase">
                             Our Approach
                           </span>
                         )}
@@ -160,10 +163,9 @@ export default function WhyChooseUs() {
             <div className="mt-7 sm:mt-9">
               <Link
                 href="/contact"
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-amber-400 px-6 py-3.5 text-sm font-extrabold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-lg hover:shadow-amber-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 sm:w-auto sm:px-7 sm:py-4"
+                className="group btn-dark inline-flex w-full items-center justify-center gap-3 rounded-full px-6 py-3.5 text-sm font-extrabold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-lg hover:shadow-amber-200/60 focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:outline-none sm:w-auto sm:px-7 sm:py-4"
               >
                 Talk to Our Team
-
                 <ArrowRight
                   size={18}
                   className="transition-transform duration-300 group-hover:translate-x-1"

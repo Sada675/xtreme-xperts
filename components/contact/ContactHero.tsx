@@ -48,7 +48,7 @@ export default function ContactHero() {
               {/* Heading */}
               <h1 className="text-[19px] leading-[1.2] font-extrabold tracking-tight text-white sm:text-3xl lg:text-[2.8rem] xl:text-5xl">
                 Have a Question?
-                <span className="mt-1 block bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 bg-clip-text text-transparent sm:mt-2">
+                <span className="text-glow-amber mt-1 block bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 bg-clip-text sm:mt-2">
                   Let&apos;s Talk!
                 </span>
               </h1>
@@ -100,7 +100,7 @@ export default function ContactHero() {
 
                 <Link
                   href="tel:+441234567890"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-2.5 py-2 text-[7px] font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-xs lg:px-6 lg:py-3.5 lg:text-sm"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/85 px-2.5 py-2 text-[7px] font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/95 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-xs lg:px-6 lg:py-3.5 lg:text-sm"
                 >
                   <Phone
                     size={12}
