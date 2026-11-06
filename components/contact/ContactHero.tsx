@@ -119,7 +119,7 @@ export default function ContactHero() {
               {/* Image Card */}
               <div className="relative overflow-hidden rounded-lg border border-white/20 bg-black/20 p-1 shadow-2xl backdrop-blur-sm sm:rounded-2xl sm:p-1.5 lg:rounded-[1.8rem] lg:p-2">
                 <Image
-                  src="/images/services-hero11.jpg"
+                  src="/images/contact-hero55.png"
                   alt="Friendly customer support and repair assistance"
                   width={800}
                   height={650}

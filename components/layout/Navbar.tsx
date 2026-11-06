@@ -28,6 +28,12 @@ export default function Navbar() {
   // Close mobile menu whenever the route changes.
   useEffect(() => {
     setMenuOpen(false);
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
   }, [pathname]);
 
   // Lock background scrolling and support the Escape key.

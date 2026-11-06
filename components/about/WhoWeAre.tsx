@@ -38,7 +38,7 @@ export default function WhoWeAre() {
             {/* Main Image */}
             <div className="group relative aspect-[5/4] overflow-hidden rounded-[1.7rem] bg-slate-100 shadow-2xl">
               <Image
-                src="/images/about-hero.jpg"
+                src="/images/WhoWeAre.jpg"
                 alt="Xtreme Xperts professional device repair work"
                 fill
                 priority={false}
