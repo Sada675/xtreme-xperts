@@ -5,11 +5,47 @@ import { Send, MessageSquare, Clock, ShieldCheck } from "lucide-react";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
-    event.currentTarget.reset();
+
+    const form = event.currentTarget;
+
+    setLoading(true);
+    setSubmitted(false);
+    setErrorMessage("");
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send your message.");
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -17,7 +53,6 @@ export default function ContactForm() {
       id="contact-form"
       className="bg-background scroll-mt-28 px-4 py-14 sm:px-6 sm:py-20 lg:scroll-mt-32 lg:px-8"
     >
-      {" "}
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         {/* Left Content */}
         <div className="flex flex-col justify-center">
@@ -42,7 +77,7 @@ export default function ContactForm() {
           {/* Support Features */}
           <div className="mt-9 space-y-7">
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-100 text-[#52218b]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <MessageSquare size={21} />
               </div>
 
@@ -72,7 +107,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-100 text-[#52218b]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <ShieldCheck size={21} />
               </div>
 
@@ -90,9 +125,9 @@ export default function ContactForm() {
         </div>
 
         {/* Form Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-xl shadow-purple-950/5 sm:rounded-3xl sm:p-8 lg:p-10">
+        <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-xl shadow-gray-900/5 sm:rounded-3xl sm:p-8 lg:p-10">
           {/* Top Gradient */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#7F2BE8] via-purple-400 to-[#F59E0B]" />
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400" />
 
           {/* Form Heading */}
           <div className="mb-8">
@@ -113,10 +148,20 @@ export default function ContactForm() {
           {submitted && (
             <div
               role="status"
-              className="mb-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-800"
+              className="mb-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm leading-6 font-medium text-green-800"
             >
-              Thank you for reaching out! Your message has been submitted
-              successfully in this demo.
+              Thank you for reaching out! Your enquiry has been sent
+              successfully. Our team will get back to you soon.
+            </div>
+          )}
+
+          {/* Error Message */}
+          {errorMessage && (
+            <div
+              role="alert"
+              className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-6 font-medium text-red-700"
+            >
+              {errorMessage}
             </div>
           )}
 
@@ -137,8 +182,10 @@ export default function ContactForm() {
                   name="name"
                   type="text"
                   placeholder="Your full name"
+                  maxLength={100}
+                  autoComplete="name"
                   required
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
                 />
               </div>
 
@@ -155,8 +202,10 @@ export default function ContactForm() {
                   name="email"
                   type="email"
                   placeholder="you@example.com"
+                  maxLength={254}
+                  autoComplete="email"
                   required
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
                 />
               </div>
             </div>
@@ -176,7 +225,9 @@ export default function ContactForm() {
                   name="phone"
                   type="tel"
                   placeholder="Your phone number"
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
+                  maxLength={30}
+                  autoComplete="tel"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
                 />
               </div>
 
@@ -193,7 +244,7 @@ export default function ContactForm() {
                   name="device"
                   defaultValue=""
                   required
-                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-700 transition outline-none focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
+                  className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-700 transition outline-none focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
                 >
                   <option value="" disabled>
                     Select your device
@@ -221,8 +272,9 @@ export default function ContactForm() {
                 name="subject"
                 type="text"
                 placeholder="What do you need help with?"
+                maxLength={150}
                 required
-                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
+                className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
               />
             </div>
 
@@ -239,22 +291,27 @@ export default function ContactForm() {
                 id="contact-message"
                 name="message"
                 rows={5}
+                maxLength={5000}
                 placeholder="Tell us a little about the issue with your device..."
                 required
-                className="w-full resize-y rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100"
+                className="w-full resize-y rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 transition outline-none placeholder:text-gray-400 focus:border-amber-400 focus:bg-white focus:ring-4 focus:ring-amber-100"
               />
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-yellow-300 to-amber-400 px-6 py-3.5 text-sm font-bold text-[#171717] shadow-lg shadow-amber-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-400/30 sm:w-auto"
+              disabled={loading}
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-yellow-300 to-amber-400 px-6 py-3.5 text-sm font-bold text-[#171717] shadow-lg shadow-amber-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-400/30 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
             >
-              Send Message
-              <Send
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
+              {loading ? "Sending Message..." : "Send Message"}
+
+              {!loading && (
+                <Send
+                  size={17}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              )}
             </button>
 
             <p className="text-xs leading-5 text-gray-400">
