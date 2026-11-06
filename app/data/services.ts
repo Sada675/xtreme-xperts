@@ -71,6 +71,16 @@ export const servicesData = [
         answer:
           "Our illustrative starting prices begin at £35. The final price depends on your phone model and repair requirements.",
       },
+      {
+        question: "Do you repair all mobile phone brands?",
+        answer:
+          "We provide repair support for different smartphone brands, depending on the device model and availability of suitable replacement parts.",
+      },
+      {
+        question: "Can you fix a phone that is not charging?",
+        answer:
+          "Yes, we offer charging port repair to help resolve common charging connection problems.",
+      },
     ],
   },
 
@@ -140,6 +150,16 @@ export const servicesData = [
         answer:
           "Illustrative starting prices begin at £45, depending on the fault and laptop model.",
       },
+      {
+        question: "Can you fix a laptop that is overheating?",
+        answer:
+          "Yes, we offer support for common overheating and cooling-related problems.",
+      },
+      {
+        question: "Can you help with laptop software problems?",
+        answer:
+          "We can help troubleshoot common operating system and software-related issues.",
+      },
     ],
   },
 
@@ -207,6 +227,16 @@ export const servicesData = [
         question: "What is the starting price for tablet repair?",
         answer: "Illustrative starting prices begin at £39.",
       },
+      {
+        question: "Can you repair a tablet that is not charging?",
+        answer:
+          "Yes, we offer charging port repair to help resolve common tablet charging problems.",
+      },
+      {
+        question: "Do you repair tablet battery problems?",
+        answer:
+          "Yes, battery replacement is available for supported tablet models.",
+      },
     ],
   },
 
@@ -272,6 +302,16 @@ export const servicesData = [
       {
         question: "How much does Xbox repair cost?",
         answer: "Illustrative starting prices begin at £39.",
+      },
+      {
+        question: "Why is my Xbox not displaying anything on the screen?",
+        answer:
+          "This may be related to an HDMI port or display connection issue. We offer HDMI port repair and can help diagnose common display problems.",
+      },
+      {
+        question: "Can you fix an Xbox that won't turn on?",
+        answer:
+          "We offer diagnosis for common Xbox power and startup problems to help identify the cause.",
       },
     ],
   },
@@ -339,6 +379,16 @@ export const servicesData = [
       {
         question: "How much does PlayStation repair cost?",
         answer: "Illustrative starting prices begin at £39.",
+      },
+      {
+        question: "Why is my PS5 making loud fan noises?",
+        answer:
+          "Loud fan noise can be related to cooling or overheating problems. We offer support for common PlayStation cooling issues.",
+      },
+      {
+        question: "Can you fix a PlayStation that won't read discs?",
+        answer:
+          "Yes, we offer disc drive repair to help resolve common disc reading problems.",
       },
     ],
   },
