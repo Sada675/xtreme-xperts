@@ -18,25 +18,61 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
-    }
-
+    if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  // Close mobile menu whenever the route changes.
+  // Handle normal page navigation and scroll to top
   useEffect(() => {
     setMenuOpen(false);
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
+    // Normal navigation always starts at the top
+    if (!window.location.hash) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
+    }
   }, [pathname]);
 
-  // Lock background scrolling and support the Escape key.
+  // Handle Get a Quote hash navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+
+      if (!hash) return;
+
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+
+      target?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  // Scroll to form after navigating from another page
+  useEffect(() => {
+    if (window.location.hash !== "#contact-form") return;
+
+    const timer = window.setTimeout(() => {
+      document.getElementById("contact-form")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 400);
+
+    return () => window.clearTimeout(timer);
+  }, [pathname]);
+
+  // Handle mobile menu
   useEffect(() => {
     if (!menuOpen) return;
 
@@ -92,6 +128,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  scroll={true}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={`group relative py-3 text-sm font-semibold whitespace-nowrap transition-colors duration-200 xl:text-[15px] ${
                     isActive(item.href)
@@ -111,20 +148,20 @@ export default function Navbar() {
             </nav>
 
             {/* Desktop CTA */}
-            {/* Desktop CTA */}
-            <Link
-              href="/contact"
-              className="btn-dark group hidden lg:inline-flex xl:px-5"
-            >
-              <Phone size={16} />
-
-              <span>Get a Quote</span>
-
-              <ArrowUpRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
+            <div className="hidden lg:block">
+              <Link
+                href="/contact#contact-form"
+                scroll={false}
+                className="btn-dark group xl:px-5"
+              >
+                <Phone size={16} />
+                <span>Get a Quote</span>
+                <ArrowUpRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -173,7 +210,6 @@ export default function Navbar() {
               <p className="text-base leading-tight font-extrabold text-slate-950">
                 Xtreme Xperts
               </p>
-
               <p className="mt-1 text-xs font-medium text-slate-500">
                 Tech & Repair
               </p>
@@ -195,6 +231,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
+              scroll={true}
               aria-current={isActive(item.href) ? "page" : undefined}
               onClick={() => setMenuOpen(false)}
               className={`flex min-h-12 items-center justify-between rounded-xl px-4 py-3 text-sm font-bold transition-colors ${
@@ -222,7 +259,8 @@ export default function Navbar() {
           </p>
 
           <Link
-            href="/contact"
+            href="/contact#contact-form"
+            scroll={false}
             onClick={() => setMenuOpen(false)}
             className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-sm transition-colors hover:bg-yellow-300 focus-visible:ring-2 focus-visible:ring-yellow-500 focus-visible:ring-offset-2 focus-visible:outline-none"
           >

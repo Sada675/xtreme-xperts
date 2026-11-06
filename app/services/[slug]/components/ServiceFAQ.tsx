@@ -32,7 +32,7 @@ export default function ServiceFAQ({ service }: Props) {
 
           {/* Contact Button */}
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="group btn-dark mt-8 inline-flex items-center gap-3 rounded-full px-6 py-4 text-sm font-bold text-white transition-all duration-300 hover:bg-amber-400 hover:text-[#171923]"
           >
             Contact Our Team

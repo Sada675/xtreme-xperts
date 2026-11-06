@@ -31,7 +31,7 @@ export default function ServiceCTA() {
 
           {/* CTA Button */}
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="group inline-flex shrink-0 items-center gap-3 rounded-full bg-amber-400 px-8 py-4 text-sm font-extrabold text-[#171923] transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300"
           >
             Book Your Repair

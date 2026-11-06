@@ -74,7 +74,7 @@ export default function ServiceHero({ service }: Props) {
             {/* Buttons */}
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center gap-3 rounded-full bg-amber-400 px-7 py-4 text-sm font-extrabold text-[#171923] transition duration-300 hover:-translate-y-1 hover:bg-amber-300"
               >
                 Book a Repair
@@ -85,7 +85,7 @@ export default function ServiceHero({ service }: Props) {
               </Link>
 
               <Link
-                href="/services"
+                href="/services#repair-services"
                 className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-6 py-4 text-sm font-bold text-gray-700 transition duration-300 hover:border-amber-400 hover:text-amber-600"
               >
                 <ArrowLeft size={16} />

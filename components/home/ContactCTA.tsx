@@ -85,7 +85,7 @@ export default function ContactCTA() {
           <div className="flex w-full flex-col gap-4 sm:flex-row lg:w-52 lg:flex-col">
             {/* Primary Button */}
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-xl border border-amber-200/40 bg-gradient-to-r from-amber-300 to-yellow-400 px-6 py-4 text-center font-bold text-[#292114] shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-1 hover:from-amber-200 hover:to-yellow-300 hover:shadow-xl hover:shadow-amber-400/15 focus-visible:ring-2 focus-visible:ring-amber-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#342d19] focus-visible:outline-none"
             >
               Get in Touch

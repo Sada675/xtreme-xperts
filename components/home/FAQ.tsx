@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Minus, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Plus, Minus, ArrowRight, MessageCircle } from "lucide-react";
 
 const faqs = [
   {
@@ -41,33 +41,35 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-background relative overflow-hidden px-5 py-10 sm:px-8 sm:py-14 lg:py-10">
-      {/* Subtle background decoration */}
-      <div className="pointer-events-none absolute top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-100/50 blur-3xl" />
+    <section className="bg-background relative overflow-hidden px-5 py-16 sm:px-8 sm:py-10 lg:py-4">
+      {/* Background Decorations */}
+      <div className="pointer-events-none absolute -top-20 -left-20 h-80 w-80 rounded-full bg-amber-100/50 blur-3xl" />
+
+      <div className="pointer-events-none absolute right-0 bottom-0 h-72 w-72 rounded-full bg-yellow-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2 text-xs font-bold tracking-[0.2em] text-amber-700 uppercase sm:text-sm">
-            <span className="h-2 w-2 rounded-full bg-amber-500" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-white px-4 py-2 text-xs font-bold tracking-[0.18em] text-amber-700 uppercase shadow-sm sm:text-sm">
+            <MessageCircle size={15} />
             Frequently Asked Questions
           </span>
 
           <h2 className="mt-6 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Questions?
-            <span className="text-glow-amber block">
+            <span className="mt-1 block text-amber-500">
               We&apos;ve Got Answers.
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
             Everything you need to know about our repair services, process, and
             how to get your device back in working order.
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             const answerId = `faq-answer-${index}`;
@@ -75,66 +77,84 @@ export default function FAQ() {
             return (
               <div
                 key={faq.question}
-                className={`border-b border-slate-200 transition-colors duration-300 ${
-                  isOpen ? "border-amber-300" : ""
+                className={`group overflow-hidden rounded-2xl border transition-all duration-300 ${
+                  isOpen
+                    ? "border-amber-300 bg-white shadow-lg shadow-amber-950/[0.05]"
+                    : "border-slate-200 bg-white/70 hover:border-amber-200 hover:bg-white hover:shadow-md"
                 }`}
               >
+                {/* Question */}
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
                   aria-controls={answerId}
-                  className="group flex w-full items-center justify-between gap-5 py-5 text-left sm:py-6"
+                  className="flex w-full items-center justify-between gap-4 px-4 py-5 text-left sm:px-6 sm:py-6"
                 >
-                  <span className="flex min-w-0 items-start gap-4 sm:gap-5">
-                    {/* Question number */}
+                  <span className="flex min-w-0 items-center gap-4 sm:gap-5">
+                    {/* Question Number */}
                     <span
-                      className={`pt-0.5 text-sm font-bold transition-colors duration-300 ${
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-xs font-extrabold transition-all duration-300 ${
                         isOpen
-                          ? "text-amber-600"
-                          : "text-slate-400 group-hover:text-amber-500"
+                          ? "bg-amber-400 text-slate-950"
+                          : "bg-slate-100 text-slate-500 group-hover:bg-amber-100 group-hover:text-amber-700"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    {/* Question */}
+                    {/* Question Text */}
                     <span
-                      className={`text-sm leading-6 font-bold transition-colors duration-300 sm:text-base lg:text-lg ${
+                      className={`text-sm leading-6 font-bold transition-colors duration-300 sm:text-base ${
                         isOpen
                           ? "text-slate-950"
-                          : "text-slate-800 group-hover:text-amber-700"
+                          : "text-slate-700 group-hover:text-slate-950"
                       }`}
                     >
                       {faq.question}
                     </span>
                   </span>
 
-                  {/* Plus / Minus Icon */}
+                  {/* Toggle Icon */}
                   <span
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                       isOpen
-                        ? "rotate-0 bg-amber-400 text-slate-950"
-                        : "bg-white text-slate-500 ring-1 ring-slate-200 group-hover:bg-amber-50 group-hover:text-amber-600 group-hover:ring-amber-300"
+                        ? "rotate-180 bg-amber-400 text-slate-950"
+                        : "bg-slate-100 text-slate-500 group-hover:bg-amber-100 group-hover:text-amber-700"
                     }`}
                   >
                     {isOpen ? (
-                      <Minus size={18} strokeWidth={2} />
+                      <Minus size={18} strokeWidth={2.5} />
                     ) : (
-                      <Plus size={18} strokeWidth={2} />
+                      <Plus size={18} strokeWidth={2.5} />
                     )}
                   </span>
                 </button>
 
-                {/* Answer */}
+                {/* Answer - White Background */}
                 <div
                   id={answerId}
-                  hidden={!isOpen}
-                  className="pr-2 pb-6 pl-9 sm:pr-12 sm:pb-7 sm:pl-12"
+                  aria-hidden={!isOpen}
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
                 >
-                  <p className="text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                    {faq.answer}
-                  </p>
+                  <div className="overflow-hidden">
+                    <div
+                      className={`border-t border-amber-100 bg-white px-4 sm:px-6 ${
+                        isOpen ? "py-5 opacity-100" : "py-0 opacity-0"
+                      } transition-all duration-300`}
+                    >
+                      <div className="flex gap-4 pl-0 sm:pl-14">
+                        {/* Answer Indicator */}
+                        <span className="mt-1 h-6 w-1 shrink-0 rounded-full bg-amber-400" />
+
+                        <p className="text-sm leading-7 text-slate-600 sm:text-[15px] sm:leading-8">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
@@ -142,14 +162,18 @@ export default function FAQ() {
         </div>
 
         {/* Bottom Contact CTA */}
-        <div className="mt-6 text-center sm:mt-8">
-          <p className="text-base font-medium text-slate-600">
+        <div className="mt-12 text-center sm:mt-14">
+          <p className="text-base font-semibold text-slate-800">
             Still have questions?
           </p>
 
+          <p className="mt-2 text-sm text-slate-500">
+            Our team is here to help you find the right repair solution.
+          </p>
+
           <Link
-            href="/contact"
-            className="group mt-4 inline-flex items-center gap-2 rounded-xl bg-amber-400 px-6 py-3.5 text-sm font-bold text-slate-950 transition-all duration-300 hover:bg-amber-300 hover:shadow-lg hover:shadow-amber-400/20"
+            href="/contact#contact-form"
+            className="group mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-6 py-3.5 text-sm font-extrabold text-slate-950 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-lg hover:shadow-amber-400/20"
           >
             Contact Our Team
             <ArrowRight

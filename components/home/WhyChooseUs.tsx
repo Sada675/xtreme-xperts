@@ -162,7 +162,7 @@ export default function WhyChooseUs() {
             {/* Call to action */}
             <div className="mt-7 sm:mt-9">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="group btn-dark inline-flex w-full items-center justify-center gap-3 rounded-full px-6 py-3.5 text-sm font-extrabold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-lg hover:shadow-amber-200/60 focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 focus-visible:outline-none sm:w-auto sm:px-7 sm:py-4"
               >
                 Talk to Our Team

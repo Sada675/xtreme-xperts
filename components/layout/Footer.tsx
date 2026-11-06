@@ -6,8 +6,8 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const footerLinks = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
   { name: "About Us", href: "/about" },
+  { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -131,7 +131,7 @@ export default function Footer() {
               </div>
 
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 text-sm font-bold text-amber-400 transition-colors duration-300 hover:text-purple-300"
               >
                 Contact our team

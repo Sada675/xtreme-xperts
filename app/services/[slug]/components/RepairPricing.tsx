@@ -77,7 +77,7 @@ export default function RepairPricing({ service }: Props) {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   aria-label={`Book a repair for ${issue.title}`}
                   className="btn-dark inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-3 text-xs font-extrabold text-amber-700 transition-all duration-300"
                 >

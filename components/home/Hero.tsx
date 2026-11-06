@@ -245,7 +245,7 @@ export default function Hero() {
             }`}
           >
             <Link
-              href="/services"
+              href="/services#repair-services"
               className="group btn-dark inline-flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full px-7 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-amber-400/20 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl hover:shadow-amber-400/20 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
             >
               Explore Our Services
@@ -256,7 +256,7 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/35 bg-white/95 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-black/5 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/60 hover:bg-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
             >
               Contact Our Team

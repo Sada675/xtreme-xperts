@@ -25,7 +25,7 @@ const features = [
 
 export default function TrustBar() {
   return (
-    <section className="bg-background border-b border-slate-100">
+    <section className="bg-background">
       {" "}
       <div className="container-custom grid grid-cols-2 gap-6 py-8 md:grid-cols-4 md:gap-5 md:py-10">
         {features.map((feature) => {
