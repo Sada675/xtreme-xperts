@@ -277,7 +277,7 @@ export default function Navbar() {
         <div className="mt-auto pt-8">
           <div className="rounded-xl bg-slate-50 p-4 text-center">
             <p className="text-xs leading-5 text-slate-500">
-              Professional tech support and repair services.
+              Professional tech support and repair servicesss.
             </p>
           </div>
         </div>
