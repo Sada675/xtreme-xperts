@@ -15,7 +15,7 @@ export default function ContactForm() {
   return (
     <section
       id="contact-form"
-      className="bg-[#f8f8fa] px-4 py-14 sm:px-6 sm:py-20 lg:px-8"
+      className="bg-background px-4 py-14 sm:px-6 sm:py-20 lg:px-8"
     >
       {" "}
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">

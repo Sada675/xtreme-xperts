@@ -251,7 +251,7 @@ export default function ServicesGrid() {
   return (
     <section
       id="repair-services"
-      className="relative overflow-hidden bg-[#f8f8fa] px-3 py-10 sm:px-6 sm:py-24 lg:px-8 lg:py-8"
+      className="bg-background relative overflow-hidden px-3 py-10 sm:px-6 sm:py-24 lg:px-8 lg:py-8"
     >
       {/* Background Decoration */}
 

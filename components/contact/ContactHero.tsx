@@ -26,7 +26,7 @@ const features = [
 
 export default function ContactHero() {
   return (
-    <section className="bg-[#f8f8fa] px-3 pt-[100px] pb-10 sm:px-5 sm:pt-[115px] sm:pb-14 lg:px-8 lg:pt-[125px] lg:pb-16">
+    <section className="bg-background px-3 pt-[100px] pb-10 sm:px-5 sm:pt-[115px] sm:pb-14 lg:px-8 lg:pt-[125px] lg:pb-16">
       <div className="mx-auto max-w-7xl">
         {/* Hero Card */}
         <div className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-[#251039] via-[#52218b] to-[#d97721] px-3 py-6 shadow-xl sm:rounded-[2rem] sm:px-8 sm:py-10 lg:px-12 lg:py-14 xl:px-16">

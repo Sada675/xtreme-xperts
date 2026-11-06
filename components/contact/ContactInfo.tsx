@@ -29,7 +29,7 @@ const contactDetails = [
 
 export default function ContactInfo() {
   return (
-    <section className="bg-[#f8f8fa] px-4 py-12 sm:px-6 sm:py-8 lg:px-7">
+    <section className="bg-background px-4 py-12 sm:px-6 sm:py-8 lg:px-7">
       <div className="mx-auto max-w-7xl">
         {/* Section Heading */}
         <div className="mx-auto mb-10 max-w-2xl text-center">
