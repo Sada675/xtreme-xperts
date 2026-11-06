@@ -26,7 +26,7 @@ const reviews = [
 
 export default function CustomerReviews() {
   return (
-    <section className="relative overflow-hidden bg-[#fafaf8] px-5 py-10 sm:px-8 lg:px-16 lg:py-14">
+    <section className="bg-background relative overflow-hidden px-5 py-10 sm:px-8 lg:px-16 lg:py-14">
       {" "}
       <div className="mx-auto max-w-7xl">
         {/* Section Heading */}{" "}

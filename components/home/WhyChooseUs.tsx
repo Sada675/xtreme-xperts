@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="relative overflow-hidden bg-[#fafaf8] py-10 sm:py-10 lg:py-2"
+      className="bg-background relative overflow-hidden py-10 sm:py-10 lg:py-2"
     >
       {/* Background decorations */}
       <div

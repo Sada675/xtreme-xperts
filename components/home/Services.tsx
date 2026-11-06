@@ -86,7 +86,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#fafaf8] py-10 sm:py-10 lg:py-12"
+      className="bg-background relative overflow-hidden py-10 sm:py-10 lg:py-12"
     >
       {/* Decorative Background */}
       <div
@@ -231,7 +231,7 @@ export default function Services() {
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute right-40 -bottom-28 h-60 w-60 rounded-full bg-amber-400/90 blur-3xl"
+            className="pointer-events-none absolute right-40 -bottom-28 h-60 w-60 rounded-full bg-amber-300/50 blur-3xl"
           />
 
           <div className="relative flex flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left">
@@ -252,7 +252,7 @@ export default function Services() {
 
             <Link
               href="/contact"
-              className="group btn-dark inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full px-7 py-4 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-400/10 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 focus-visible:outline-none sm:w-auto"
+              className="group btn-dark inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full px-7 py-4 text-sm font-extrabold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-amber-300 focus-visible:outline-none sm:w-auto"
             >
               Talk to Our Team
               <ArrowRight

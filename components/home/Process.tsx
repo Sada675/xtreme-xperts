@@ -40,7 +40,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="relative overflow-hidden bg-[#fafaf8] py-10 sm:py-14 lg:py-14">
+    <section className="bg-background relative overflow-hidden py-10 sm:py-14 lg:py-14">
       {/* Background decoration */}
       <div className="pointer-events-none absolute top-20 -right-24 h-72 w-72 rounded-full bg-amber-100/50 blur-3xl" />
 

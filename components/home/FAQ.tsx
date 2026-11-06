@@ -41,7 +41,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative overflow-hidden bg-[#fafaf8] px-5 py-10 sm:px-8 sm:py-14 lg:py-10">
+    <section className="bg-background relative overflow-hidden px-5 py-10 sm:px-8 sm:py-14 lg:py-10">
       {/* Subtle background decoration */}
       <div className="pointer-events-none absolute top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-100/50 blur-3xl" />
 
